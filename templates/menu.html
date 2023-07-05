@@ -107,7 +107,7 @@
             <tr>
                 <td>{{ dish['dish_id'] }}</td>
                 <td>{{ dish['dish_name'] }}</td>
-                <td>${{ dish['price'] }}</td>
+                <td>₹{{ dish['price'] }}</td>
                 <td class="availability-{{ 'yes' if dish['availability'] else 'no' }}">{{ 'Yes' if dish['availability'] else 'No' }}</td>
                 <td>{{ dish['quantity'] }}</td>
             </tr>
