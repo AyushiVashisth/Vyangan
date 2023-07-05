@@ -20,13 +20,6 @@
             "price": 500.0,
             "availability": true,
             "quantity": 3
-        },
-        {
-            "dish_id": 5,
-            "dish_name": "Abhishek",
-            "price": 1000.0,
-            "availability": false,
-            "quantity": 1
         }
     ],
     "orders": [

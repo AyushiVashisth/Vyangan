@@ -53,11 +53,16 @@ def remove_dish():
         if dish_name is None:
             flash(f"Dish with ID {dish_id} does not exist!")
 
+        # Adjust dish IDs after removal
+        for index, dish in enumerate(menu):
+            dish['dish_id'] = index + 1
+
         # Save data to db.json
         save_data()
 
         return redirect('/menu')
     return render_template('remove_dish.html')
+
 
 @app.route('/update_availability', methods=['GET', 'POST'])
 def update_availability():
@@ -105,9 +110,12 @@ def take_order():
         # Save data to db.json
         save_data()
 
+        # Redirect to /orders to see the updated orders list
         return redirect('/orders')
-    
+
     return render_template('order.html', menu=menu)
+
+
 
 
 @app.route('/orders')
@@ -141,5 +149,4 @@ def save_data():
         json.dump(data, f)
 
 if __name__ == '__main__':
-    app.run()
-
+    app.run(debug=True)
