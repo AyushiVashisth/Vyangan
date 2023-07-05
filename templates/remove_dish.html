@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Dish</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #10183A;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #FF4500;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        form {
+            margin: 20px auto;
+            width: 350px;
+            border: 1px solid #10183A;
+            background-color:  #10183A;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #FF4500;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        
+        input[type="number"] {
+            width: 97%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid#202B63;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color:#202B63;
+            color: #fff;
+        }
+        
+        input[type="submit"] {
+            width: 360px;
+            background-color: #FF4500;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #ff6600;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #FF4500;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remove Dish</h1>
+    <form method="POST">
+        <label for="dish_id">Dish ID:</label>
+        <input type="number" name="dish_id" required>
+        <input type="submit" value="Remove Dish">
+    </form>
+    <a class="back-link" href="/menu">Back to Menu</a>
+</body>
+</html>

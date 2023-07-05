@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Order Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #10183A;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #FF4500;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            margin: 20px auto;
+            width: 400px;
+            border: none;
+            padding: 40px;
+            background-color: #10183A;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            background-color: #202B63;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 400px;
+            background-color: #FF4500;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF6347;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 10px;
+            color: #FF4500;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Order Status</h1>
+    <form action="/update_status" method="post">
+        <label for="order_id">Order ID:</label>
+        <select name="order_id" id="order_id">
+            {% for order in orders %}
+            <option value="{{ order['order_id'] }}">{{ order['order_id'] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="Pending">Pending</option>
+            <option value="Processing">Processing</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+
+        <input type="submit" value="Update Status">
+    </form>
+
+    <a class="back-link" href="/orders">Back to Orders</a>
+</body>
+</html>

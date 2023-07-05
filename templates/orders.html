@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #10183A;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #FF4500;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+        
+        th {
+            background-color: #FF4500;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #FF4500;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <th>Order ID</th>
+            <th>Customer Name</th>
+            <th>Dishes</th>
+            <th>Status</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order['order_id'] }}</td>
+            <td>{{ order['customer_name'] }}</td>
+            <td>{{ ', '.join(order['dishes']) }}</td>
+            <td>{{ order['status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a class="back-link" href="/menu">Back to Menu</a>
+</body>
+</html>

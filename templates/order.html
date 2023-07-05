@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #10183A;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #FF4500;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        form {
+            margin: 20px auto;
+            width: 400px;
+            border: none;
+            padding: 40px;
+            background-color: #10183A;
+            color: #fff;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            background-color:#202B63;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            background-color: #202B63;
+        }
+        
+        input[type="submit"] {
+            width: 424px;
+            background-color: #FF4500;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #FF6347;
+        }
+        
+        .back-link {
+            display: block;
+            margin-top: 10px;
+            color: #FF4500;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Place Order</h1>
+    <form method="POST">
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" name="customer_name" required>
+        <label for="dish_ids">Dish IDs (comma-separated):</label>
+        <input type="text" name="dish_ids" required>
+        <input type="submit" value="Place Order">
+    </form>
+    <a class="back-link" href="/menu">Back to Menu</a>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #10183A;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #10183A;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        
+        h1 {
+            color: #FF4500;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 56px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .menu-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .menu-link {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        
+        .menu-link:hover {
+            color: #FF4500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+            color: #fff;
+        }
+        
+        th {
+            background-color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        td {
+            font-size: 20px;
+        }
+        
+        .availability-yes {
+            color: #008000;
+            font-weight: bold;
+        }
+        
+        .availability-no {
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Vyangan</h1>
+        <div class="menu-links">
+            <a class="menu-link" href="/add_dish">Add Dish</a>
+            <a class="menu-link" href="/remove_dish">Remove Dish</a>
+            <a class="menu-link" href="/update_availability">Update Availability</a>
+            <a class="menu-link" href="/order">Place Order</a>
+            <a class="menu-link" href="/update_status">Status of Order</a>
+            <a class="menu-link" href="/orders">View Orders</a>
+        </div>
+        <table>
+            <tr>
+                <th>Dish ID</th>
+                <th>Dish Name</th>
+                <th>Price</th>
+                <th>Availability</th>
+                <th>Quantity</th>
+            </tr>
+            {% for dish in menu %}
+            <tr>
+                <td>{{ dish['dish_id'] }}</td>
+                <td>{{ dish['dish_name'] }}</td>
+                <td>${{ dish['price'] }}</td>
+                <td class="availability-{{ 'yes' if dish['availability'] else 'no' }}">{{ 'Yes' if dish['availability'] else 'No' }}</td>
+                <td>{{ dish['quantity'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

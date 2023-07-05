@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Dish</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #10183a;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 10px;
+        background-color: #10183a;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: #ff4500;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 36px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color:#202B63;
+        color: #10183a;
+      }
+
+      input[type="checkbox"] {
+        display: inline-block;
+        margin-top: 5px;
+        margin-right: 5px;
+      }
+
+      input[type="submit"] {
+        width: 430px;
+        background-color: #fac485;
+        font-weight: bold;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #ff8902;
+      }
+      .back-link {
+        display: block;
+        margin-top: 10px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      .back-link:hover {
+        color: #ff4500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Add Dish</h1>
+      <form method="POST">
+        <label for="dish_id">Dish ID:</label>
+        <input type="number" name="dish_id" required />
+        <label for="dish_name">Dish Name:</label>
+        <input type="text" name="dish_name" required />
+        <label for="price">Price:</label>
+        <input type="number" name="price" required />
+        <label for="availability">Availability:</label>
+        <input type="checkbox" name="availability" value="1" />
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" required />
+        <input type="submit" value="Add Dish" />
+      </form>
+      <a class="back-link" href="/menu">Back to Menu</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+    "menu": [
+        {
+            "dish_id": 1,
+            "dish_name": "Momos",
+            "price": 109.0,
+            "availability": true,
+            "quantity": 10
+        },
+        {
+            "dish_id": 2,
+            "dish_name": "Samosa",
+            "price": 10.0,
+            "availability": true,
+            "quantity": 9
+        },
+        {
+            "dish_id": 4,
+            "dish_name": "Rajma Chawal",
+            "price": 500.0,
+            "availability": true,
+            "quantity": 3
+        },
+        {
+            "dish_id": 5,
+            "dish_name": "Abhishek",
+            "price": 1000.0,
+            "availability": false,
+            "quantity": 1
+        }
+    ],
+    "orders": [
+        {
+            "order_id": 1,
+            "customer_name": "Ashu",
+            "dishes": [
+                "Samosa"
+            ],
+            "status": "Completed"
+        }
+    ]
+}
